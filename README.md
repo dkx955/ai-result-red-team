@@ -18,6 +18,9 @@ is the free version of the filter we use, plus a case study where we applied it 
 - **[`CASE_how_we_killed_our_own_green_result.md`](CASE_how_we_killed_our_own_green_result.md)**
   — a full worked teardown of our own retracted result. No third party named or
   attacked. The subject is us.
+- **[`SAMPLE_AUDIT_REPORT.md`](SAMPLE_AUDIT_REPORT.md)** — a full sample of the paid
+  deliverable (on a synthetic case), so you can see *exactly* what a $150 mini audit
+  hands back before you spend a cent.
 
 ## Why trust the method
 
@@ -46,7 +49,8 @@ result, it isn't a method.
 You send one claim / one pipeline output / one benchmark. We send back a 2–3 page
 report: reproduced yes/no, the 3 most likely break points, and a defensible
 **GREEN / YELLOW / RED** verdict with evidence. **Full refund if we miss the
-deadline.**
+deadline.** See **[`SAMPLE_AUDIT_REPORT.md`](SAMPLE_AUDIT_REPORT.md)** for exactly
+what you get.
 
 Bigger scope (up to 5 claims, a reproduction script, and a 30-minute walkthrough)
 and a monthly per-release retainer are available — ask in an issue.
