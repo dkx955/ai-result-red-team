@@ -3,6 +3,8 @@
 **Before you show that "green" result to an investor, a reviewer, or a customer —
 try to break it. If you won't, someone else will, at a worse time.**
 
+> **The offer, one page:** [**dkx955.github.io/ai-result-red-team**](https://dkx955.github.io/ai-result-red-team/) — reward-hacking / spec-gaming audit of one AI benchmark claim, $150, 48-hour turnaround, full refund if late.
+
 Anyone can generate a green result with an AI agent now. That's no longer scarce.
 What's scarce is someone who will honestly try to **refute** one — a benchmark
 that looks too good, a research claim, the output of an agent pipeline. This repo
