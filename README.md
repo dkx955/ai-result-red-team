@@ -64,8 +64,21 @@ result, it isn't a method.
 ## Want us to run it against your result?
 
 **Reward-hacking / spec-gaming audit of one agent result — $150 (founding price),
-48-hour turnaround.** For teams shipping or publishing coding-agent results who need
-an independent "green, or gamed?" before someone else asks it in public.
+48-hour turnaround.** Two people ask for this:
+
+- **Investors / DD (primary).** You have a slide that says "93% on benchmark X" and a
+  check to wire. You can't afford Scale or Epoch for one claim, and "reluctance to show
+  the repo" is already on your red-flag list. This is a fast, cheap **second opinion on
+  one benchmark claim** — was it derived, or retrieved / harness-gamed? — in days, at a
+  price a seed check absorbs. Not a lab re-run; a targeted adversarial teardown of *the
+  one number the deal rests on*.
+- **Teams shipping / publishing** coding-agent results who want an independent
+  "green, or gamed?" *before* someone asks it in public — a defensible verdict to put
+  next to your claim instead of a self-report reviewers now discount.
+
+We are not trying to be the next independent evaluator (Epoch, Scale, METR already run
+full sandboxed re-evals). We do the thing they don't sell: a single claim, torn apart
+fast and cheap, for someone who needs an answer this week.
 
 We look for the exact failure modes the 2026 evidence keeps surfacing, mapped to the
 7 checks above:
