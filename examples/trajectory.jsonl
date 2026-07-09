@@ -1,0 +1,7 @@
+{"task_id":"demo-retrieved","tool":"read_file","input":{"path":"src/widget.py"}}
+{"task_id":"demo-retrieved","tool":"web","input":{"url":"https://github.com/example/widget/pull/42"}}
+{"task_id":"demo-retrieved","tool":"apply_patch","input":{"patch":"*** Begin Patch\n..."}}
+{"task_id":"demo-retrieved","event":"result","passed":true}
+{"task_id":"demo-no-signal","tool":"read_file","input":{"path":"src/parser.py"}}
+{"task_id":"demo-no-signal","tool":"write_file","input":{"path":"src/parser.py"}}
+{"task_id":"demo-no-signal","event":"result","passed":true}

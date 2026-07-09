@@ -41,6 +41,53 @@ is the free version of the filter we use, plus a case study where we applied it 
   build (deleting / disabling / weakening its own tests). This is check #1–#4 enforced
   *before* the bad result exists, instead of caught after. Install it, then bring us the
   results a hook can't judge.
+- **[`tools/trajectory_provenance.py`](tools/trajectory_provenance.py)** — a
+  zero-dependency provenance check for JSONL agent trajectories. Give it the exact
+  upstream patch, PR, commit, or gold-diff markers that were forbidden during the run;
+  it reports whether one was accessed before the agent's first write and calculates a
+  retrieval-stripped pass count.
+
+### Reproducible retrieve-vs-derive signal
+
+```bash
+python3 tools/trajectory_provenance.py examples/trajectory.jsonl \
+  --reference github.com/example/widget/pull/42 \
+  --output provenance-report.json
+
+python3 -m unittest discover -s tests -v
+```
+
+The JSONL format is intentionally loose: each row is one event, `task_id` groups rows,
+the tool can be in `tool` / `tool_name` / `name`, and arguments can be in `input` /
+`arguments` / `args`. A final row can carry `passed: true|false`. Rows must already be
+in chronological order: the analyzer uses row order (and command-line file order) and
+intentionally ignores timestamps rather than guessing how to repair a disordered trace.
+
+The detector is conservative by design:
+
+- **RED** requires a literal `--reference` marker of at least eight characters,
+  declared by the auditor, in the **input arguments** of a recognized agent tool-action
+  event. Tool output/content is never scanned. Common user/system/task/thread/result and
+  rejected-approval events are excluded by their event names. A generic `git show`,
+  patch-like URL, or reference-solution lookup is only **YELLOW**.
+- Only access **before the first write** counts as retrieval-before-derivation.
+- If the analyzer cannot find a write event, the task is **NOT EVALUABLE** and RED is
+  impossible. Common shell writes (`>`, `tee`, `sed -i`, `git apply`, `patch`, `dd of=`,
+  `cp`, `mv`, and common `python -c` file writes) are recognized, but no finite command
+  parser can prove it sees every custom write mechanism. A write made through an
+  unrecognized executor name can be missed; a later source lookup may then appear to
+  precede the write and produce a false RED.
+- A RED signal proves that a known solution source was accessed; it does not prove the
+  agent performed no reasoning. **No signal is not proof of independent derivation.**
+- The reported retrieval-stripped count removes confirmed retrieval passes. A real
+  capability score still requires rerunning with the retrieval surface physically
+  unavailable.
+- Reference markers should identify the forbidden source uniquely and must not contain
+  quotes or backslashes. A marker already present in ordinary repository paths or task
+  inputs is not suitable evidence.
+- Event roles are classified by a finite list of tool/event name patterns. Exporters
+  with unusual names should be normalized before audit; a non-action event whose name
+  collides with an action class can otherwise be scanned.
 
 ## Why trust the method
 
