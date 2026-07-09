@@ -21,6 +21,11 @@ is the free version of the filter we use, plus a case study where we applied it 
 - **[`SAMPLE_AUDIT_REPORT.md`](SAMPLE_AUDIT_REPORT.md)** — a full sample of the paid
   deliverable (on a synthetic case), so you can see *exactly* what a $150 mini audit
   hands back before you spend a cent.
+- **[`result-integrity-guard`](https://github.com/dkx955/result-integrity-guard)** — a
+  zero-dependency Claude Code hook that stops an autonomous agent from faking a green
+  build (deleting / disabling / weakening its own tests). This is check #1–#4 enforced
+  *before* the bad result exists, instead of caught after. Install it, then bring us the
+  results a hook can't judge.
 
 ## Why trust the method
 
