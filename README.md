@@ -27,6 +27,10 @@ is the free version of the filter we use, plus a case study where we applied it 
 - **[`CASE_how_we_killed_our_own_green_result.md`](CASE_how_we_killed_our_own_green_result.md)**
   — a full worked teardown of our own retracted result. No third party named or
   attacked. The subject is us.
+- **[`WORKED_AUDIT_public_agent_benchmark.md`](WORKED_AUDIT_public_agent_benchmark.md)**
+  — the checklist run against a **real, publicly documented** agent-benchmark claim
+  (the SWE-bench Pro retrieval-vs-derivation finding), at the depth of a paid audit.
+  Not synthetic, not our own result — a case you can go read yourself.
 - **[`SAMPLE_AUDIT_REPORT.md`](SAMPLE_AUDIT_REPORT.md)** — a full sample of the paid
   deliverable (on a synthetic case), so you can see *exactly* what a $150 mini audit
   hands back before you spend a cent.
